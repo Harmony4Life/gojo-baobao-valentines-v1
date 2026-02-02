@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valentine's: Red + Blue = Purple</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="stage" class="stage" aria-live="polite">
+    <!-- Cinematic images (fade in/out) -->
+    <img id="gojoRed" class="overlay-image" src="assets/gojo_red.png" alt="" />
+    <img id="gojoBlue" class="overlay-image" src="assets/gojo_blue.png" alt="" />
+
+    <!-- Cracks overlay (appears before Purple) -->
+    <img id="cracks" class="cracks" src="assets/cracks.png" alt="" />
+
+    <!-- Flash overlay -->
+    <div id="flash" class="flash" aria-hidden="true"></div>
+
+    <!-- Orbs -->
+    <img id="orbRed" class="orb orb-red" src="assets/orb_red.png" alt="Red orb" />
+    <img id="orbBlue" class="orb orb-blue" src="assets/orb_blue.png" alt="Blue orb" />
+    <img id="orbPurple" class="orb orb-purple" src="assets/orb_purple.png" alt="Purple orb" />
+
+    <!-- Buttons -->
+    <section id="buttonRow" class="button-row">
+      <button id="btnRed" class="btn btn-red" type="button">
+        Jutsushiki Hanten: Aka
+      </button>
+
+      <button id="btnBlue" class="btn btn-blue" type="button">
+        Jutsushiki Junten: Ao
+      </button>
+    </section>
+
+    <button id="btnPurple" class="btn btn-purple" type="button">
+      Kyoshiki: Murasaki
+    </button>
+
+    <!-- Final proposal -->
+    <section id="final" class="final" aria-hidden="true">
+      <h1 class="final-text">
+        My one and only, will you be the blue to my red, the purple to my hollow heart, and be my valentine?
+      </h1>
+      <button id="btnYes" class="btn btn-yes" type="button">Yes.</button>
+    </section>
+
+    <!-- Celebration layers -->
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+    <div id="heartsLayer" class="hearts-layer" aria-hidden="true"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
