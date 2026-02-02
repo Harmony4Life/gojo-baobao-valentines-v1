@@ -300,10 +300,20 @@ html, body{
 .final-text{
   max-width: 980px;
   margin: 0 0 26px 0;
-  font-size: clamp(1.4rem, 2.4vw, 2.6rem);
-  line-height: 1.15;
+
+  font-size: clamp(1.6rem, 2.6vw, 2.9rem);
+  line-height: 1.12;
   font-weight: 900;
-  text-shadow: 0 12px 34px rgba(0,0,0,.55);
+
+  letter-spacing: 0.6px;
+  text-transform: none;
+
+  font-family: "Georgia", "Garamond", "Times New Roman", serif;
+
+  text-shadow:
+    0 2px 0 rgba(0,0,0,.35),
+    0 10px 30px rgba(0,0,0,.55),
+    0 0 22px rgba(161,59,255,.35);
 }
 
 .final .btn-yes{
@@ -352,9 +362,8 @@ html, body{
   }
 }
 
-/* Purple background state */
 .stage.is-purple{
-  background: radial-gradient(80vw 80vh at 50% 35%, rgba(255,255,255,0.10), rgba(161,59,255,0.78) 35%, rgba(20,0,30,1) 78%);
+  background: #2a003a; /* solid dark purple */
 }
 
 /* Button emerge shake */
