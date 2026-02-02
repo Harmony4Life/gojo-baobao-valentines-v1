@@ -57,14 +57,23 @@ html, body{
 .button-row{
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 6vw;
   pointer-events: none;
 }
 
-.button-row .btn{
+/* lock each button to its side so removing the other doesn't shift layout */
+#btnRed{
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+#btnBlue{
+  position: absolute;
+  right: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
   pointer-events: auto;
 }
 
@@ -356,11 +365,40 @@ html, body{
   100%{ transform: translate(-50%,-50%) scale(1.00) rotate(0deg); }
 }
 
-/* Small screens */
 @media (max-width: 700px){
-  .button-row{ flex-direction: column; gap: 16px; justify-content: center; }
-  .btn{ min-width: min(86vw, 420px); }
-  .orb{ width: min(70vw, 460px); }
-  .orb-red{ left: 50%; top: 35%; transform: translate(-50%,-50%); }
-  .orb-blue{ right: auto; left: 50%; top: 70%; transform: translate(-50%,-50%); }
+  /* Center the buttons vertically */
+  #btnRed{
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+  }
+
+  #btnBlue{
+    right: auto;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+  }
+
+  /* Keep orb scaling & positioning */
+  .btn{
+    min-width: min(86vw, 420px);
+  }
+
+  .orb{
+    width: min(70vw, 460px);
+  }
+
+  .orb-red{
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+  }
+
+  .orb-blue{
+    right: auto;
+    left: 50%;
+    top: 72%;
+    transform: translate(-50%,-50%);
+  }
 }
