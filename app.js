@@ -10,6 +10,21 @@ const btnRed = qs("#btnRed");
 const btnBlue = qs("#btnBlue");
 const btnPurple = qs("#btnPurple");
 const btnYes = qs("#btnYes");
+const sfxAka = qs("#sfxAka");
+const sfxAo = qs("#sfxAo");
+const sfxMurasaki = qs("#sfxMurasaki");
+
+function playVoice(audioEl){
+  if(!audioEl) return;
+
+  // restart from beginning if clicked again
+  audioEl.pause();
+  audioEl.currentTime = 0;
+
+  audioEl.play().catch(err => {
+    console.warn("Audio blocked:", err);
+  });
+}
 
 const buttonRow = qs("#buttonRow");
 
@@ -60,7 +75,7 @@ function maybeRevealPurple(){
 btnRed.addEventListener("click", async () => {
   if(redChosen) return;
   redChosen = true;
-
+  playVoice(sfxAka);
   removeButton(btnRed);
 
   showCinematic(gojoRed);
@@ -75,6 +90,7 @@ btnRed.addEventListener("click", async () => {
 btnBlue.addEventListener("click", async () => {
   if(blueChosen) return;
   blueChosen = true;
+  playVoice(sfxAo);
 
   removeButton(btnBlue);
 
@@ -91,6 +107,7 @@ btnPurple.addEventListener("click", async () => {
   if(!(redChosen && blueChosen)) return;
 
   purpleDone = true;
+  playVoice(sfxMurasaki);
   btnPurple.style.pointerEvents = "none";
   btnPurple.style.opacity = "0";
 
